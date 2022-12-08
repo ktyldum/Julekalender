@@ -34,23 +34,23 @@ def lookout(a):
 
     return result
 
-north=np.apply_along_axis(visible,0,forest)
+fromNorth=np.apply_along_axis(visible,0,forest)
 print("From north")
-print(north)
+print(fromNorth)
 
-west=np.apply_along_axis(visible,1,forest)
+fromWest=np.apply_along_axis(visible,1,forest)
 print("From west")
-print(west)
+print(fromWest)
 
-south=np.flipud(np.apply_along_axis(visible,0,np.flipud(forest)))
+fromSouth=np.flipud(np.apply_along_axis(visible,0,np.flipud(forest)))
 print("From south")
-print(south)
+print(fromSouth)
 
-east=np.fliplr(np.apply_along_axis(visible,1,np.fliplr(forest)))
+fromEast=np.fliplr(np.apply_along_axis(visible,1,np.fliplr(forest)))
 print("From east")
-print(east)
+print(fromEast)
 
-result = north + south + east + west
+result = fromNorth + fromSouth + fromEast + fromWest
 print("Total")
 print(result)
 
